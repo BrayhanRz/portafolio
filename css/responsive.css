@@ -1,0 +1,121 @@
+@media screen and (max-width: 720px) {
+	header #nav-bar {
+		color: #fff;
+		cursor: pointer;
+		background: #1197b5;
+		display: block !important;
+		font-size: 16pt;
+		left: 0px;
+		padding: 20px 25px;
+		position: fixed;
+		top: 0px;
+		width: 100%;
+	}
+
+	header #nav-bar span {
+		float: right;
+		font-size: 20pt;
+	}
+
+	header nav {
+		background: #000;
+		display: none;
+		width: 100% !important;
+	}
+
+	header nav ul li {
+		display: block !important;
+	}
+
+	header nav ul li a {
+		display: block !important;
+		border-bottom: 1px solid rgba(255,255,255,0.2) !important;
+	}
+
+	header nav ul li a:hover, header nav ul li a:active {
+		background: #fc0272;
+	}
+
+	.banner {
+		padding: 100px 0px !important;
+	}
+
+	#sobre-mi .fila .columna {
+		display: block;
+		padding: 0px !important;
+		width: 100% !important;
+	}
+
+	#sobre-mi .titles {
+		text-align: center !important;
+	}
+
+	#sobre-mi .line {
+		margin: 20px auto !important;
+	}
+
+	#estudios .content {
+		width: 350px;
+	}
+
+	#estudios .fila {
+		width: 100% !important;
+	}
+
+	#estudios .fila .columna {
+		display: block;
+		width: 100% !important;
+	}
+}
+
+@media screen and (max-width: 680px) {
+	#contactame .fila {
+		display: block;
+	}
+	#contactame .fila .columna {
+		display: inline;
+		width: 24% !important;
+	}
+	#contactame a {
+		display: block;
+		height: 116px;
+		padding: 20px 15px !important;
+		width: 200px;
+	}
+}
+
+@media screen and (max-width: 520px) {
+	#conocimientos .fila .columna {
+		display: block;
+		width: 100% !important;
+	}
+
+	#conocimientos .fila .columna > .fila .columna {
+		display: table-cell !important;
+	}
+
+	#conocimientos .fila .columna > .fila .columna:first-child {
+		width: 100px !important;
+	}
+
+	#conocimientos-2 .fila .columna {
+		display: block;
+		width: 100% !important;
+	}
+
+	#conocimientos-2 .fila .columna > .fila .columna {
+		display: table-cell !important;
+	}
+
+	#conocimientos-2 .fila .columna > .fila .columna:first-child {
+		width: 100px !important;
+	}
+
+	.barra {
+		width: 100% !important;
+	}
+
+	#portafolio p {
+		padding: 0px !important;
+	}
+}

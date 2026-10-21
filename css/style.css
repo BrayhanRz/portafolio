@@ -1,0 +1,646 @@
+﻿* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+}
+
+html, body {
+	font-family: 'Raleway', sans-serif;
+	height: 100%;
+	width: 100%;
+}
+
+/*Header styles*/
+.fixed-header {
+	background: #000;
+}
+header {
+	background: none;
+	left: 0px;
+	height: auto;
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	z-index: 100;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+header #nav-bar {
+	display: none;
+}
+
+header nav {
+	margin: auto;
+	width: 90%;
+}
+
+header nav ul {
+	display: block;
+	list-style: none;
+	text-align: center;
+}
+
+header nav ul li {
+	display: inline-block;
+	vertical-align: top;
+}
+
+header nav ul li a {
+	color: #fff;
+	border-bottom: 3px solid transparent;
+	display: inline-block;
+	font-size: 14pt;
+	font-weight: 300;
+	padding: 15px 20px;
+	text-decoration: none;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+	header nav ul li a:hover, header nav ul li a:active {
+		border-color: #fff;
+	}
+
+/*Button goTo*/
+.goTo {
+	position: absolute;
+	bottom: 60px;
+	text-align: center;
+	width: 100%;
+}
+
+	.goTo a {
+		color: #fff;
+		font-size: 30pt;
+		margin-top: 0px;
+		text-decoration: none;
+		position: absolute;
+		-webkit-animation: goTo 0.5s linear 0s infinite alternate;
+		-o-animation: goTo 0.5s linear 0s infinite alternate;
+		animation: goTo 0.5s linear 0s infinite alternate;
+	}
+
+		@-webkit-keyframes goTo {
+			0% {margin-top: -5px;}
+			100% {margin-top: 5px;}
+		}
+
+		@keyframes goTo {
+			0% {margin-top: -5px;}
+			100% {margin-top: 5px;}
+		}
+
+/*Content styles*/
+.content {
+	margin: auto;
+	padding: 70px 0px;
+	width: 90%;
+}
+
+.content p {
+	font-size: 14pt;
+	margin-top: 7px;
+}
+
+.content p.titles {
+	font-weight: 500;
+	font-size: 24pt;
+}
+
+.fila {
+	display: table;
+	width: 100%;
+}
+
+.fila .columna {
+	display: table-cell;
+	vertical-align: top;
+}
+
+.banner, #sobre-mi, #estudios, #conocimientos, #conocimientos-2, #portafolio, #contactame {
+	overflow: hidden;
+	position: relative;
+	z-index: 10;
+}
+
+/*Banner styles*/
+.banner {
+	background: url('../img/banner.jpg') fixed center center;
+	background-size: cover;
+	display: block;
+	padding: 200px 0px;
+	position: relative;
+	text-align: center;
+}
+
+	.banner .logo {
+		height: 192px;
+		margin: auto;
+		position: relative;
+		width: 300px;
+	}
+	.banner .logo img {
+		position: fixed;
+		margin-left: -150px;
+		width: 300px;
+		transform: none;
+		z-index: 0;
+	}
+
+	.banner p {
+		color: #fff;
+		font-size: 18pt;
+		margin-top: 30px;
+	}
+
+/*Sobre mi styles*/
+#sobre-mi {
+	background: #fff;
+}
+#sobre-mi .myPhoto {
+	border-radius: 100%;
+}
+
+#sobre-mi p.titles {
+	color: #009688 !important;
+}
+
+#sobre-mi .line {
+	background: #009688;
+	height: 2px;
+	margin: 20px 0px;
+	width: 150px;
+}
+
+#sobre-mi p {
+	color: #616161;
+}
+
+/*Estudios styles*/
+#estudios {
+	background: url('../img/estudios.jpg') fixed center center;
+	background-size: cover;
+	color: #fff;
+}
+
+#estudios .title {
+	color: #fff;
+	font-size: 24pt;
+}
+
+#estudios .line {
+	background: #FFEB3B;
+	height: 2px;
+	margin: 20px 0px;
+	width: 150px;
+}
+
+/*Conocimientos styles*/
+#conocimientos {
+	background: #1197b5;
+	color: #fff;
+}
+
+.conocimientos p {
+	text-align: justify;
+}
+
+.conocimientos p.title {
+	font-size: 30pt;
+	text-align: center;
+}
+
+.conocimientos .line {
+	background: #fff;
+	height: 2px;
+	margin: 15px auto;
+	width: 150px;
+}
+
+.conocimientos img {
+	width: 90px;
+}
+
+.barra {
+	border: 3px solid #fff;
+	border-radius: 35px;
+	height: 40px;
+	margin-top: 10px;
+	overflow: hidden;
+	width: 100%;
+}
+
+.barra span {
+	font-size: 16pt;
+	font-weight: 500;
+	line-height: 30px;
+	padding-left: 20px;
+	float: left;
+}
+
+/*Conocimiento HTML5*/
+.bg-barra-html {
+	background: #ff4c1e;
+	height: 40px;
+	width: 00%;
+	-webkit-animation: bgBarra 2s linear 0s forwards;
+	-o-animation: bgBarra 2s linear 0s forwards;
+	animation: bgBarra 2s linear 0s forwards;
+}
+
+	@-webkit-keyframes bgBarra {
+		0% {width: 0%;}
+		100% {width: 90%;}
+	}
+
+	@keyframes bgBarra {
+		0% {width: 0%;}
+		100% {width: 90%;}
+	}
+
+/*Conocimiento CSS3*/
+.bg-barra-css {
+	background: #0062b4;
+	height: 40px;
+	width: 00%;
+	-webkit-animation: bgBarraCss 2s linear 0s forwards;
+	-o-animation: bgBarraCss 2s linear 0s forwards;
+	animation: bgBarraCss 2s linear 0s forwards;
+}
+
+	@-webkit-keyframes bgBarraCss {
+		0% {width: 0%;}
+		100% {width: 95%;}
+	}
+
+	@keyframes bgBarraCss {
+		0% {width: 0%;}
+		100% {width: 95%;}
+	}
+
+/*Conocimiento JS*/
+.bg-barra-js {
+	background: #ff9c20;
+	height: 40px;
+	width: 00%;
+	-webkit-animation: bgBarraJS 2s linear 0s forwards;
+	-o-animation: bgBarraJS 2s linear 0s forwards;
+	animation: bgBarraJS 2s linear 0s forwards;
+}
+
+	@-webkit-keyframes bgBarraJS {
+		0% {width: 0%;}
+		100% {width: 50%;}
+	}
+
+	@keyframes bgBarraJS {
+		0% {width: 0%;}
+		100% {width: 50%;}
+	}
+
+/*Conocimiento Responsive Design*/
+.bg-barra-rd {
+	background: #00da9e;
+	height: 40px;
+	width: 00%;
+	-webkit-animation: bgBarraRD 2s linear 0s forwards;
+	-o-animation: bgBarraRD 2s linear 0s forwards;
+	animation: bgBarraRD 2s linear 0s forwards;
+}
+
+	@-webkit-keyframes bgBarraRD {
+		0% {width: 0%;}
+		100% {width: 90%;}
+	}
+
+	@keyframes bgBarraRD {
+		0% {width: 0%;}
+		100% {width: 90%;}
+	}
+
+/*Conocimiento Responsive Design*/
+.bg-barra-wp {
+	background: #21759b;
+	height: 40px;
+	width: 00%;
+	-webkit-animation: bgBarraWP 2s linear 0s forwards;
+	-o-animation: bgBarraWP 2s linear 0s forwards;
+	animation: bgBarraWP 2s linear 0s forwards;
+}
+
+	@-webkit-keyframes bgBarraWP {
+		0% {width: 0%;}
+		100% {width: 85%;}
+	}
+
+	@keyframes bgBarraWP {
+		0% {width: 0%;}
+		100% {width: 85%;}
+	}
+
+/*Conocimiento Responsive Design*/
+.bg-barra-joomla {
+	background: #00a500;
+	height: 40px;
+	width: 00%;
+	-webkit-animation: bgBarraJM 2s linear 0s forwards;
+	-o-animation: bgBarraJM 2s linear 0s forwards;
+	animation: bgBarraJM 2s linear 0s forwards;
+}
+
+	@-webkit-keyframes bgBarraJM {
+		0% {width: 0%;}
+		100% {width: 95%;}
+	}
+
+	@keyframes bgBarraJM {
+		0% {width: 0%;}
+		100% {width: 95%;}
+	}
+
+/*Conocimiento Responsive Design*/
+.bg-barra-ps {
+	background: #fc0272;
+	height: 40px;
+	width: 00%;
+	-webkit-animation: bgBarraPS 2s linear 0s forwards;
+	-o-animation: bgBarraPS 2s linear 0s forwards;
+	animation: bgBarraPS 2s linear 0s forwards;
+}
+
+	@-webkit-keyframes bgBarraPS {
+		0% {width: 0%;}
+		100% {width: 70%;}
+	}
+
+	@keyframes bgBarraPS {
+		0% {width: 0%;}
+		100% {width: 70%;}
+	}
+
+/*Conomientos Diseño gráfico styles*/
+#conocimientos-2 {
+	background: #fc0272;
+	color: #fff;
+}
+
+/*Conocimiento Photoshop*/
+.bg-barra-ap {
+	background: #80d3fd;
+	height: 40px;
+	width: 00%;
+	-webkit-animation: bgBarraAP 2s linear 0s forwards;
+	-o-animation: bgBarraAP 2s linear 0s forwards;
+	animation: bgBarraAP 2s linear 0s forwards;
+}
+
+	@-webkit-keyframes bgBarraAP {
+		0% {width: 0%;}
+		100% {width: 95%;}
+	}
+
+	@keyframes bgBarraAP {
+		0% {width: 0%;}
+		100% {width: 95%;}
+	}
+
+/*Conocimiento Illustrator*/
+.bg-barra-ai {
+	background: #ffac00;
+	height: 40px;
+	width: 00%;
+	-webkit-animation: bgBarraAI 2s linear 0s forwards;
+	-o-animation: bgBarraAI 2s linear 0s forwards;
+	animation: bgBarraAI 2s linear 0s forwards;
+}
+
+	@-webkit-keyframes bgBarraAI {
+		0% {width: 0%;}
+		100% {width: 85%;}
+	}
+
+	@keyframes bgBarraAI {
+		0% {width: 0%;}
+		100% {width: 85%;}
+	}
+
+/*Conocimiento Dreamweaver*/
+.bg-barra-apre {
+	background: #5bfb00;
+	height: 40px;
+	width: 00%;
+	-webkit-animation: bgBarraPre 2s linear 0s forwards;
+	-o-animation: bgBarraPre 2s linear 0s forwards;
+	animation: bgBarraPre 2s linear 0s forwards;
+}
+
+	@-webkit-keyframes bgBarraPre {
+		0% {width: 0%;}
+		100% {width: 85%;}
+	}
+
+	@keyframes bgBarraPre {
+		0% {width: 0%;}
+		100% {width: 85%;}
+	}
+
+/*Conocimiento indesign*/
+.bg-barra-ae {
+	background: #f85cb0;
+	height: 40px;
+	width: 00%;
+	-webkit-animation: bgBarraAE 2s linear 0s forwards;
+	-o-animation: bgBarraAE 2s linear 0s forwards;
+	animation: bgBarraAE 2s linear 0s forwards;
+}
+
+	@-webkit-keyframes bgBarraAE {
+		0% {width: 0%;}
+		100% {width: 70%;}
+	}
+
+	@keyframes bgBarraAE {
+		0% {width: 0%;}
+		100% {width: 70%;}
+	}
+
+/*Portafolio styles*/
+#portafolio {
+	background: #fff;
+	color: #616161;
+}
+
+#portafolio .title {
+	color: #fc0272;
+	font-size: 30pt;
+	text-align: center;
+}
+
+#portafolio .line {
+	background: #fc0272;
+	height: 2px;
+	margin: 15px auto;
+	width: 150px;
+}
+
+#portafolio p {
+	padding: 0px 20%;
+	text-align: center;
+}
+
+.botones {
+	display: block;
+	text-align: center;
+}
+
+.portafolio {
+	display: inline-block;
+	height: 200px;
+	margin: 20px;
+	position: relative;
+	vertical-align: top;
+	width: 200px;
+}
+
+.portafolio p {
+	padding: 0px !important;
+}
+
+.portafolio .back {
+	background: rgba(252,2,114,1);
+	color: #fff;
+	height: 200px;
+	left: 0px;
+	opacity: 0;
+	padding: 50px 20px;
+	position: absolute;
+	top: 0px;
+	width: 200px;
+	-webkit-transition: all 0.6s ease;
+	-o-transition: all 0.6s ease;
+	transition: all 0.6s ease;
+}
+
+.portafolio .back a {
+	background: none;
+	border: 2px solid #fff;
+	color: #fff;
+	display: inline-block;
+	padding: 7px 30px;
+	text-decoration: none;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+	.portafolio .back a:hover, .portafolio .back a:active {
+		background: #fff;
+		color: #fc0272;
+	}
+
+.portafolio:hover .back {
+	opacity: 1;
+}
+
+.portafolio .front {
+	height: 200px;
+	width: 200px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.img-1 {
+	background: url('../img/portafolio/milk.png') center center;
+}
+
+.img-2 {
+	background: url('../img/portafolio/total.png') center center;
+}
+
+.img-3 {
+	background: url('../img/portafolio/varga.png') center center;
+}
+
+.img-4 {
+	background: url('../img/portafolio/teleguardia.png') center center;
+}
+
+.img-5 {
+	background: url('../img/portafolio/gorditos.png') center center;
+}
+
+.img-6 {
+	background: url('../img/portafolio/construvel.png') center center;
+}
+
+.img-7 {
+	background: url('../img/portafolio/mundy.png') center center;
+}
+
+.img-8 {
+	background: url('../img/portafolio/pradera.png') center center;
+}
+
+.img-9 {
+	background: url('../img/portafolio/auto.png') center center;
+}
+
+.img-10 {
+	background: url('../img/portafolio/fuseincol.png') center center;
+}
+
+/*Contactame styles*/
+#contactame {
+	background: #1197b5;
+	color: #fff;
+	text-align: center;
+}
+
+#contactame .title {
+	color: #fff;
+	font-size: 30pt;
+	text-align: center;
+}
+
+#contactame .line {
+	background: #fff;
+	height: 2px;
+	margin: 15px auto;
+	width: 150px;
+}
+
+#contactame a {
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	margin: auto;
+	padding: 20px 25px;
+	text-decoration: none;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+#contactame a .icon {
+	display: inline-block;
+	font-size: 28pt;
+	margin-bottom: 20px;
+}
+
+#contactame a:hover {
+	background: #fff;
+	color: #1197b5;
+}
+
+/*Footer styles*/
+footer {
+	background: #000;
+	color: rgba(255,255,255,0.4);
+	padding: 10px;
+	text-align: center;
+}

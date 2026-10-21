@@ -1,0 +1,666 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Portafolio Brayhan Riaza Carrillo | BrzC Digital</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <!--CSS CODES-->
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="css/animate.css">
+        <link rel="stylesheet" type="text/css" href="css/fonts.css">
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,300italic,400italic,500,500italic,600,600italic' rel='stylesheet' type='text/css'>
+        
+        <!-- ESTILOS ADAPTADOS AL NUEVO LOGO BRZC DIGITAL -->
+        <style>
+            :root {
+                --bg-dark: #0a0e11;
+                --bg-card: #12191f;
+                --primary-color: #1e4d58;
+                --accent-color: #2b6d7c;
+                --text-light: #f4f4f5;
+                --text-muted: #8e9ca3;
+                --border-color: #1d2730;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                background-color: var(--bg-dark);
+                color: var(--text-light);
+                font-family: 'Raleway', sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Header Moderno */
+            header {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                background: rgba(10, 14, 17, 0.92);
+                backdrop-filter: blur(10px);
+                border-bottom: 1px solid var(--border-color);
+                z-index: 1000;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.8rem 2rem;
+                box-sizing: border-box;
+            }
+
+            .logo-header img {
+                height: 40px;
+                width: auto;
+                vertical-align: middle;
+            }
+
+            #nav-bar {
+                color: var(--primary-color);
+                font-weight: 600;
+                cursor: pointer;
+                display: none;
+            }
+
+            nav ul {
+                display: flex;
+                list-style: none;
+                gap: 2rem;
+                margin: 0;
+                padding: 0;
+            }
+
+            nav a {
+                color: var(--text-light);
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s;
+            }
+
+            nav a:hover {
+                color: var(--accent-color);
+            }
+
+            /* Banner Principal */
+            .banner {
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background: radial-gradient(circle at center, rgba(30, 77, 88, 0.25) 0%, rgba(10, 14, 17, 1) 75%);
+                text-align: center;
+                padding: 0 1rem;
+            }
+
+            .banner .logo img {
+                max-width: 260px;
+                height: auto;
+                filter: drop-shadow(0 0 20px rgba(30, 77, 88, 0.4));
+            }
+
+            .banner .line {
+                width: 60px;
+                height: 3px;
+                background: var(--primary-color);
+                margin: 1.5rem auto;
+                border-radius: 2px;
+            }
+
+            .goTo a {
+                color: var(--accent-color);
+                font-size: 1.8rem;
+                text-decoration: none;
+            }
+
+            /* Secciones */
+            .main section, .main div[id] {
+                padding: 5rem 2rem;
+                max-width: 1100px;
+                margin: 0 auto;
+                box-sizing: border-box;
+            }
+
+            .content {
+                width: 100%;
+            }
+
+            p.titles, p.title {
+                font-size: 2rem;
+                font-weight: 600;
+                color: var(--text-light);
+                margin-bottom: 0.5rem;
+            }
+
+            .line {
+                width: 50px;
+                height: 3px;
+                background: var(--primary-color);
+                margin: 0.5rem 0 1.5rem 0;
+            }
+
+            /* Sobre mí Grid */
+            #sobre-mi .fila {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+                align-items: center;
+            }
+
+            .myPhoto {
+                width: 100%;
+                max-width: 320px;
+                border-radius: 12px;
+                border: 2px solid var(--primary-color);
+                box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+            }
+
+            /* Estudios Grid */
+            #estudios .fila {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+                width: 100% !important;
+            }
+
+            #estudios .columna {
+                background: var(--bg-card);
+                padding: 2rem;
+                border-radius: 8px;
+                border: 1px solid var(--border-color);
+                width: 100% !important;
+                box-sizing: border-box;
+            }
+
+            /* Conocimientos */
+            .conocimientos .fila {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+
+            .conocimientos .columna {
+                background: var(--bg-card);
+                padding: 1.2rem;
+                border-radius: 8px;
+                border: 1px solid var(--border-color);
+                box-sizing: border-box;
+            }
+
+            .barra {
+                background: var(--border-color);
+                height: 10px;
+                border-radius: 5px;
+                position: relative;
+                overflow: hidden;
+                margin-top: 5px;
+            }
+
+            .barra span {
+                position: absolute;
+                right: 5px;
+                top: -18px;
+                font-size: 0.8rem;
+                color: var(--accent-color);
+                font-weight: bold;
+            }
+
+            .bg-barra-html, .bg-barra-ap { width: 90%; height: 100%; background: var(--primary-color); }
+            .bg-barra-css, .bg-barra-joomla { width: 95%; height: 100%; background: var(--primary-color); }
+            .bg-barra-rd, .bg-barra-wp { width: 90%; height: 100%; background: var(--primary-color); }
+            .bg-barra-ai { width: 85%; height: 100%; background: var(--primary-color); }
+            .bg-barra-apre { width: 80%; height: 100%; background: var(--primary-color); }
+            .bg-barra-ae { width: 70%; height: 100%; background: var(--primary-color); }
+
+            /* Portafolio Grid Moderno */
+            #portafolio .botones {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .portafolio {
+                background: var(--bg-card);
+                border: 1px solid var(--border-color);
+                border-radius: 8px;
+                height: 180px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 1rem;
+                transition: transform 0.3s, border-color 0.3s;
+                text-align: center;
+            }
+
+            .portafolio:hover {
+                transform: translateY(-5px);
+                border-color: var(--accent-color);
+            }
+
+            .portafolio .front {
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: var(--text-light);
+                margin-bottom: 1rem;
+            }
+
+            .portafolio .back a {
+                background: var(--primary-color);
+                color: #fff;
+                padding: 0.4rem 1.2rem;
+                border-radius: 4px;
+                text-decoration: none;
+                font-weight: 600;
+                transition: background 0.3s;
+            }
+
+            .portafolio .back a:hover {
+                background: var(--accent-color);
+            }
+
+            /* Contactame */
+            #contactame .fila {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+
+            #contactame .columna {
+                background: var(--bg-card);
+                padding: 2rem;
+                border-radius: 8px;
+                border: 1px solid var(--border-color);
+                text-align: center;
+                width: 100% !important;
+            }
+
+            #contactame a {
+                color: var(--text-light);
+                text-decoration: none;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            #contactame .icon {
+                font-size: 2rem;
+                color: var(--accent-color);
+            }
+
+            /* Footer */
+            footer {
+                text-align: center;
+                padding: 3rem;
+                border-top: 1px solid var(--border-color);
+                color: var(--text-muted);
+                font-size: 0.9rem;
+            }
+
+            /* Media Queries para Móviles */
+            @media (max-width: 768px) {
+                #nav-bar { display: block; }
+                nav { display: none; }
+                #sobre-mi .fila, #estudios .fila, .conocimientos .fila {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+
+        <!--JS CODES-->
+        <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="js/wow.min.js"></script>
+        <script type="text/javascript" src="js/scripts.js"></script>
+    </head>
+        
+    <body id="body">
+
+        <header>
+            <div class="logo-header">
+                <a href="#body"><img src="img/logo-brzc-icono.png" alt="BrzC Digital Logo"></a>
+            </div>
+            <div id="nav-bar"><span class="icon-menu5"></span>Menú</div>
+            <nav>
+                <ul>
+                    <li><a href="#body">Inicio</a></li>
+                    <li><a href="#sobre-mi">Sobre mí</a></li>
+                    <li><a href="#conocimientos">Conocimientos</a></li>
+                    <li><a href="#portafolio">Portafolio</a></li>
+                    <li><a href="#contactame">Contáctame</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="banner">
+            <div class="logo">
+                <!-- Nuevo Logo BrzC Digital en formato PNG -->
+                <img class="wow bounceIn" data-wow-delay="1s" src="img/logo-brzc-centrado.png" alt="BrzC Digital Logo">
+            </div>
+            <div class="line"></div>
+            <div class="goTo"><a href="#sobre-mi"><span class="icon-circle-down"></span></a></div>
+        </div>
+
+        <div class="main">
+            <!--Sección: Sobre mí-->
+            <div id="sobre-mi">
+                <div class="content">
+                    <div class="fila">
+                        <div class="columna" style="text-align: center;">
+                            <img class="myPhoto wow fadeInLeft" src="img/brayhan.jpg" alt="Brayhan Riaza">
+                        </div>
+                        <div class="columna" style="text-align: justify;">
+                            <div class="wow fadeInRight">
+                                <p class="titles">¡Hola! soy Brayhan</p>
+                                <div class="line"></div>
+                                <p>Soy Diseñador gráfico con amplia experiencia en diseño web</p>
+                                <p>Una persona soñadora, luchadora y con muchas ganas de progresar y salir adelante, haciendo uso de mis conocimiento en las diferentes áreas del diseño.</p>
+                                <p>Ofrezco una alta gama de servicios y soluciones integrales para crear o mejorar tu imagen digital o la de tu empresa, donde es prioridad la comodidad visual, la usabilidad y la navegabilidad.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!--Sección: Estudios-->
+            <div id="estudios">
+                <div class="content">
+                    <div class="fila">
+                        <div class="columna">
+                            <div class="wow fadeInLeft">
+                                <p class="title">Educación <span style="font-weight: 600;">primaria</span></p>
+                                <div class="line"></div>
+                                <p>Institución Educativa El Pedregal</p>
+                                <p>1999 - 2004</p><br/><br/>
+                                <p class="title">Educación <span style="font-weight: 600;">Secundaria</span></p>
+                                <div class="line"></div>
+                                <p>Institución Educativa El Pedregal</p>
+                                <p>2004 - 2010</p>
+                            </div>
+                        </div>
+                        <div class="columna">
+                            <div class="wow fadeInRight">
+                                <p class="title">Educación <span style="font-weight: 600;">superior</span></p>
+                                <div class="line"></div>
+                                <p>Institución Universitaria Pascual Bravo</p>
+                                <p>2011 - 2014</p>
+                                <p>Etapa productiva</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Sección: Mis conocimientos-->
+            <div id="conocimientos" class="conocimientos">
+                <div class="content">
+                    <div class="wow fadeInDown">
+                        <p class="title">Diseño <span style="font-weight: 500;">web</span></p>
+                        <div class="line"></div>
+                        <p>Con mi amplia experiencia en diseño web poseo amplios conocimientos en distintos lenguajes tales como <strong>HTML5</strong>, <strong>CSS3</strong>. Además, poseo conocimientos en <strong>Responsive Design</strong>.</p>
+                        <p>También cuento con un amplio conocimiento en desarrollo de proyectos mediante los dos gestores de contenido más populares: <strong>WordPress</strong> y <strong>Joomla</strong>.</p>
+                    </div>
+                    <div class="fila" style="margin-top: 30px">
+                        <!--HTML5-->
+                        <div class="columna">
+                            <div class="fila" style="display: flex; align-items: center; gap: 15px;">
+                                <div style="width: 60px; flex-shrink: 0;">
+                                    <img class="wow fadeInLeft" src="img/logos/html5.png" alt="" style="width: 100%;">
+                                </div>
+                                <div style="flex-grow: 1;">
+                                    <p style="margin: 0 0 10px 0;">HTML5</p>
+                                    <div class="barra">
+                                        <span>90%</span>
+                                        <div class="wow bg-barra-html"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--CSS3-->
+                        <div class="columna">
+                            <div class="fila" style="display: flex; align-items: center; gap: 15px;">
+                                <div style="width: 60px; flex-shrink: 0;">
+                                    <img class="wow fadeInLeft" src="img/logos/css3.png" alt="" style="width: 100%;">
+                                </div>
+                                <div style="flex-grow: 1;">
+                                    <p style="margin: 0 0 10px 0;">CSS3</p>
+                                    <div class="barra">
+                                        <span>95%</span>
+                                        <div class="wow bg-barra-css"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fila" style="margin-top: 30px">
+                        <!--RESPONSIVE DESIGN-->
+                        <div class="columna">
+                            <div class="fila" style="display: flex; align-items: center; gap: 15px;">
+                                <div style="width: 60px; flex-shrink: 0;">
+                                    <img class="wow fadeInLeft" src="img/logos/responsive.png" alt="" style="width: 100%;">
+                                </div>
+                                <div style="flex-grow: 1;">
+                                    <p style="margin: 0 0 10px 0;">Responsive Design</p>
+                                    <div class="barra">
+                                        <span>90%</span>
+                                        <div class="wow bg-barra-rd"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--JOOMLA-->
+                        <div class="columna">
+                            <div class="fila" style="display: flex; align-items: center; gap: 15px;">
+                                <div style="width: 60px; flex-shrink: 0;">
+                                    <img class="wow fadeInLeft" src="img/logos/joomla.png" alt="" style="width: 100%;">
+                                </div>
+                                <div style="flex-grow: 1;">
+                                    <p style="margin: 0 0 10px 0;">Joomla</p>
+                                    <div class="barra">
+                                        <span>95%</span>
+                                        <div class="wow bg-barra-joomla"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fila" style="margin-top: 30px">
+                        <!--WORDPRESS-->
+                        <div class="columna">
+                            <div class="fila" style="display: flex; align-items: center; gap: 15px;">
+                                <div style="width: 60px; flex-shrink: 0;">
+                                    <img class="wow fadeInLeft" src="img/logos/wordpress.png" alt="" style="width: 100%;">
+                                </div>
+                                <div style="flex-grow: 1;">
+                                    <p style="margin: 0 0 10px 0;">WordPress</p>
+                                    <div class="barra">
+                                        <span>85%</span>
+                                        <div class="wow bg-barra-wp"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="columna" style="visibility: hidden;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="conocimientos-2" class="conocimientos">
+                <div class="content">
+                    <div class="wow fadeInDown">
+                        <p class="title">Artes <span style="font-weight: 500;">gráficas</span></p>
+                        <div class="line"></div>
+                        <p>En el área de las artes gráficas poseo una amplia experiencia y gran conocimiento en el manejo de algunos programas de la suite de Adobe. El manejo y uso de los programas: <strong>Photoshop</strong>, <strong>Illustrator</strong>, <strong>Dreamweaver</strong> e <strong>Indesign</strong> son vitales para crear una multimedia atractiva, que haga sentir cómodo al usuario y lo incite a permanecer y/o visitar constantemente su sitio web.</p>
+                    </div>
+                    <div class="fila" style="margin-top: 30px">
+                        <!--PHOTOSHOP-->
+                        <div class="columna">
+                            <div class="fila" style="display: flex; align-items: center; gap: 15px;">
+                                <div style="width: 60px; flex-shrink: 0;">
+                                    <img class="wow fadeInLeft" src="img/logos/photoshop.png" alt="" style="width: 100%;">
+                                </div>
+                                <div style="flex-grow: 1;">
+                                    <p style="margin: 0 0 10px 0;">Photoshop</p>
+                                    <div class="barra">
+                                        <span>95%</span>
+                                        <div class="wow bg-barra-ap"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--ILLUSTRATOR-->
+                        <div class="columna">
+                            <div class="fila" style="display: flex; align-items: center; gap: 15px;">
+                                <div style="width: 60px; flex-shrink: 0;">
+                                    <img class="wow fadeInLeft" src="img/logos/illustrator.png" alt="" style="width: 100%;">
+                                </div>
+                                <div style="flex-grow: 1;">
+                                    <p style="margin: 0 0 10px 0;">Illustrator</p>
+                                    <div class="barra">
+                                        <span>85%</span>
+                                        <div class="wow bg-barra-ai"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fila" style="margin-top: 30px">
+                        <!--dreamweaver-->
+                        <div class="columna">
+                            <div class="fila" style="display: flex; align-items: center; gap: 15px;">
+                                <div style="width: 60px; flex-shrink: 0;">
+                                    <img class="wow fadeInLeft" src="img/logos/dreamweaver.png" alt="" style="width: 100%;">
+                                </div>
+                                <div style="flex-grow: 1;">
+                                    <p style="margin: 0 0 10px 0;">Dreamweaver</p>
+                                    <div class="barra">
+                                        <span>80%</span>
+                                        <div class="wow bg-barra-apre"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Indesign-->
+                        <div class="columna">
+                            <div class="fila" style="display: flex; align-items: center; gap: 15px;">
+                                <div style="width: 60px; flex-shrink: 0;">
+                                    <img class="wow fadeInLeft" src="img/logos/indesign.png" alt="" style="width: 100%;">
+                                </div>
+                                <div style="flex-grow: 1;">
+                                    <p style="margin: 0 0 10px 0;">Indesign</p>
+                                    <div class="barra">
+                                        <span>70%</span>
+                                        <div class="wow bg-barra-ae"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Sección: Portafolio-->
+            <div id="portafolio">
+                <div class="content">
+                    <div class="wow fadeIn">
+                        <p class="title">Portafolio</p>
+                        <div class="line"></div>
+                        <p>Estos son algunos de los proyectos que he realizado.</p>
+                        <p>Unos están hechos con WordPress y otros con Joomla.</p>
+                    </div>
+                    <div class="botones" style="margin-top: 30px;">
+                        <div class="portafolio wow fadeInLeft">
+                            <div class="front">Milk</div>
+                            <div class="back"><a href="http://www.milk.com.co/" target="_blank">Ver</a></div>
+                        </div>
+                        <div class="portafolio wow fadeInLeft">
+                            <div class="front">Total Juridica</div>
+                            <div class="back"><a href="http://www.totaljuridica.com/" target="_blank">Ver</a></div>
+                        </div>
+                        <div class="portafolio wow fadeInRight">
+                            <div class="front">Vargasa</div>
+                            <div class="back"><a href="http://www.vargasa.co/" target="_blank">Ver</a></div>
+                        </div>
+                        <div class="portafolio wow fadeInRight">
+                            <div class="front">Teleguardia</div>
+                            <div class="back"><a href="http://www.teleguardia.com/" target="_blank">Ver</a></div>
+                        </div>
+                    </div>
+                    <div class="botones">
+                        <div class="portafolio wow fadeInLeft">
+                            <div class="front">Gorditos De Corazòn</div>
+                            <div class="back"><a href="http://www.gorditosdecorazon.com/" target="_blank">Ver</a></div>
+                        </div>
+                        <div class="portafolio wow fadeInLeft">
+                            <div class="front">Construvel</div>
+                            <div class="back"><a href="http://www.construvel.com/" target="_blank">Ver</a></div>
+                        </div>
+                        <div class="portafolio wow fadeInRight">
+                            <div class="front">Inmobiliaria Mundybienes</div>
+                            <div class="back"><a href="http://www.mundybienes.com/" target="_blank">Ver</a></div>
+                        </div>
+                        <div class="portafolio wow fadeInRight">
+                            <div class="front">Ciudadela Inmobiliaria</div>
+                            <div class="back"><a href="http://www.ciudadelainmobiliaria.com.co/" target="_blank">Ver</a></div>
+                        </div>
+                    </div>
+                    <div class="botones">
+                        <div class="portafolio wow fadeInLeft">
+                            <div class="front">Auto Asia</div>
+                            <div class="back"><a href="http://www.autoassia.com.co/" target="_blank">Ver</a></div>
+                        </div>
+                        <div class="portafolio wow fadeInRight">
+                            <div class="front">Fuseincol</div>
+                            <div class="back"><a href="http://www.fuseincol.com/" target="_blank">Ver</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!--Sección: Contactame-->
+            <div id="contactame">
+                <div class="content">
+                    <div class="wow fadeInDown">
+                        <p class="title">Contáctame</p>
+                        <div class="line"></div>
+                    </div>
+                    <div class="fila" style="margin-top: 30px;">
+                        <div class="columna">
+                            <a class="wow fadeInDown" href="https://es-la.facebook.com/brzzcarrillo" target="_blank">
+                                <span class="icon icon-facebook"></span><br/>
+                                <span>Brayhan Rz</span>
+                            </a>
+                        </div>
+                        <div class="columna" data-wow-delay="0.5s">
+                            <a class="wow fadeInDown" href="https://www.instagram.com/brayhanrz" target="_blank">
+                                <span class="icon icon-instagram"></span><br/>
+                                <span>@brayhanrz</span>
+                            </a>
+                        </div>
+                        <div class="columna" data-wow-delay="1s">
+                            <a class="wow fadeInDown">
+                                <span class="icon icon-whatsapp"></span><br/>
+                                <span>+57 3137714358</span>
+                            </a>
+                        </div>
+                        <div class="columna" data-wow-delay="1.5s">
+                            <a class="wow fadeInDown" href="mailto:k-be240@hotmail.com">
+                                <span class="icon icon-mail_outline"></span><br/>
+                                <span>k-be240@hotmail.com</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <p>Brayhan Riaza Carrillo — BrzC Digital</p>
+                <p>© Copyright 2026</p>
+            </footer>
+
+        </div>
+
+    </body>
+</html>
